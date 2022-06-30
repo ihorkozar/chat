@@ -3,48 +3,46 @@ import 'package:chat/src/services/user_service_contract.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 
 class UserService implements IUserService {
-  final Connection connection;
-  final RethinkDb rethinkdb;
+  final Connection _connection;
+  final RethinkDb _rethinkdb;
 
-  UserService(this.rethinkdb, this.connection);
+  UserService(this._rethinkdb, this._connection);
 
   @override
   Future<User> connect(User user) async {
     var data = user.toJson();
-    if (user.id != null) {
+    if (user.id.isNotEmpty) {
       data['id'] = user.id;
     }
 
-    final result = await rethinkdb.table('users').insert(
-        data, {'conflict': 'update', 'return_changes': true}).run(connection);
+    final result = await _rethinkdb.table('users').insert(
+        data, {'conflict': 'update', 'return_changes': true}).run(_connection);
 
     return User.fromJson(result['changes'].first['new_val']);
   }
 
   @override
   Future<void> disconnect(User user) async {
-    await rethinkdb.table('users').update({
+    await _rethinkdb.table('users').update({
       'id': user.id,
       'is_active': false,
       'last_seen': DateTime.now()
-    }).run(connection);
+    }).run(_connection);
 
-    connection.close();
+    _connection.close();
   }
 
   @override
   Future<User?> fetch(String id) async {
-    final user = await rethinkdb.table('users').get(id).run(connection);
-    if (user != null) {
-      return User.fromJson(user);
-    }
+    final user = await _rethinkdb.table('users').get(id).run(_connection);
+    return user != null ? User.fromJson(user) : null;
   }
 
   @override
   Future<List<User>> getOnlineUsers() async {
-    Cursor users = await rethinkdb
+    Cursor users = await _rethinkdb
         .table('users')
-        .filter({'is_active': true}).run(connection);
+        .filter({'is_active': true}).run(_connection);
 
     final usersList = await users.toList();
     return usersList.map((item) => User.fromJson(item)).toList();
