@@ -7,11 +7,12 @@ class User {
 
   String get id => _id ?? '';
 
-  User(
-      {required this.username,
-      required this.photoUrl,
-      required this.isActive,
-      required this.lastSeen});
+  User({
+    required this.username,
+    required this.photoUrl,
+    required this.isActive,
+    required this.lastSeen,
+  });
 
   toJson() => {
         'username': username,

@@ -1,10 +1,10 @@
-import 'package:chat/src/services/user_service_contract_impl.dart';
+import 'package:chat/src/services/user/user_service_contract_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 
 import 'package:chat/src/models/user.dart';
 
-import 'helpers.dart';
+import '../helpers.dart';
 
 
 void main() {
