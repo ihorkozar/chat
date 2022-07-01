@@ -8,7 +8,7 @@ import 'package:rethink_db_ns/rethink_db_ns.dart';
 
 import '../helpers.dart';
 
-void main() {
+void main() async {
   RethinkDb rethinkdb = RethinkDb();
   late Connection connection;
   late MessageService messageService;
@@ -17,7 +17,6 @@ void main() {
     connection = await rethinkdb.connect(host: "127.0.0.1", port: 28015);
     final encryptionService =
         EncryptionService(Encrypter(AES(Key.fromLength(32))));
-
     await createDb(rethinkdb, connection);
     messageService = MessageService(rethinkdb, connection,
         encryptionService: encryptionService);
@@ -51,8 +50,8 @@ void main() {
         from: user1.id, to: '1234', timestamp: DateTime.now(), content: 'test');
 
     final result = await messageService.send(message);
-
-    expect(result, true);
+    expect(result.from, message.from);
+    expect(result.to, message.to);
   });
 
   test('successfully subscribe and receive message', () async {
