@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:chat/src/models/message.dart';
-import 'package:chat/src/models/user.dart';
-import 'package:chat/src/services/encryption/encryption_service.dart';
-import 'package:chat/src/services/msg/msg_service.dart';
+import 'package:flutter_chat/src/models/message.dart';
+import 'package:flutter_chat/src/models/user.dart';
+import 'package:flutter_chat/src/services/encryption/encryption_service.dart';
+import 'package:flutter_chat/src/services/msg/msg_service.dart';
 import 'package:flutter/material.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 

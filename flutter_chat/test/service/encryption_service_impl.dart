@@ -1,4 +1,4 @@
-import 'package:chat/src/services/encryption/encryption_service_impl.dart';
+import 'package:flutter_chat/src/services/encryption/encryption_service_impl.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter_test/flutter_test.dart';
 

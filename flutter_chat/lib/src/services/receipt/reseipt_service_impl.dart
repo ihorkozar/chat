@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:chat/src/models/receipt.dart';
-import 'package:chat/src/models/user.dart';
-import 'package:chat/src/services/receipt/receipt_service.dart';
+import 'package:flutter_chat/src/models/receipt.dart';
+import 'package:flutter_chat/src/models/user.dart';
+import 'package:flutter_chat/src/services/receipt/receipt_service.dart';
 import 'package:flutter/material.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 

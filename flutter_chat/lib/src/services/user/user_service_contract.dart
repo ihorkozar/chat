@@ -1,4 +1,4 @@
-import 'package:chat/src/models/user.dart';
+import 'package:flutter_chat/src/models/user.dart';
 
 abstract class IUserService {
   Future<User> connect(User user);

@@ -1,4 +1,4 @@
-import 'package:chat/src/services/encryption/encryption_service.dart';
+import 'package:flutter_chat/src/services/encryption/encryption_service.dart';
 import 'package:encrypt/encrypt.dart';
 
 class EncryptionService implements IEncryptionService {
