@@ -15,8 +15,12 @@ class Message {
     required this.content,
   });
 
-  toJson() =>
-      {'from': from, 'to': to, 'timestamp': timestamp, 'content': content};
+  toJson() => {
+        'from': from,
+        'to': to,
+        'timestamp': timestamp,
+        'content': content,
+      };
 
   factory Message.fromJson(Map<String, dynamic> json) {
     final message = Message(

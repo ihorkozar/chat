@@ -1,5 +1,5 @@
 import 'package:flutter_chat/src/models/user.dart';
-import 'package:flutter_chat/src/services/user/user_service_contract.dart';
+import 'package:flutter_chat/src/services/user/user_service.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 
 class UserService implements IUserService {

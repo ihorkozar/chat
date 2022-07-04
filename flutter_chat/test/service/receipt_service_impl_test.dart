@@ -1,6 +1,6 @@
 import 'package:flutter_chat/src/models/receipt.dart';
 import 'package:flutter_chat/src/models/user.dart';
-import 'package:flutter_chat/src/services/receipt/reseipt_service_impl.dart';
+import 'package:flutter_chat/src/services/receipt/receipt_service_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 

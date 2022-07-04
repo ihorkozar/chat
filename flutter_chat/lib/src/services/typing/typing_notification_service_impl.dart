@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter_chat/src/models/typing_event.dart';
 import 'package:flutter_chat/src/models/user.dart';
 import 'package:flutter_chat/src/services/typing/typing_notification_service.dart';
-import 'package:flutter_chat/src/services/user/user_service_contract.dart';
+import 'package:flutter_chat/src/services/user/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 

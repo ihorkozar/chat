@@ -1,4 +1,4 @@
-import 'package:flutter_chat/src/services/user/user_service_contract_impl.dart';
+import 'package:flutter_chat/src/services/user/user_service_impl.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rethink_db_ns/rethink_db_ns.dart';
 
