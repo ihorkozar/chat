@@ -39,7 +39,7 @@ class CompositionRoot {
 
   static configure() async {
     _rethinkDb = RethinkDb();
-    _connection = await _rethinkDb.connect(host: '127.0.0.1', port: 28015);
+    _connection = await _rethinkDb.connect(host: '192.168.34.49', port: 28015);
     _userService = UserService(_rethinkDb, _connection);
     _messageService = MessageService(_rethinkDb, _connection);
     _database = await LocalDatabaseFactory().createDatabase();

@@ -161,7 +161,7 @@ class _MessagesListState extends State<MessagesList> {
                       return Container(color: Colors.transparent);
                     } else {
                       WidgetsBinding.instance
-                          ?.addPostFrameCallback((_) => _scrollToEnd());
+                          .addPostFrameCallback((_) => _scrollToEnd());
 
                       return _buildListOfMessages();
                     }
